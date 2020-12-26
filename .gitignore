@@ -8,6 +8,7 @@
 # testing
 /coverage
 notes.js
+.eslintcache
 
 # production
 /build
