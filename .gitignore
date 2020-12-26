@@ -7,7 +7,7 @@
 
 # testing
 /coverage
-notes.txt
+notes.js
 
 # production
 /build

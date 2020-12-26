@@ -7,8 +7,12 @@ class Search extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    this.props.searchUsers(this.state.text);
-    this.setState({ text: "" });
+    if (this.state.text) {
+      this.props.searchUsers(this.state.text);
+      this.setState({ text: "" });
+    } else {
+      this.props.setAlert("Please provide something", "light");
+    }
   };
 
   onChange = (e) =>
@@ -33,6 +37,14 @@ class Search extends Component {
             className='btn btn-dark btn-block'
           />
         </form>
+        {this.props.showClearBtn && (
+          <button
+            className='btn btn-light btn-block'
+            onClick={this.props.clearUsers}
+          >
+            Clear
+          </button>
+        )}
       </div>
     );
   }
